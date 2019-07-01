@@ -11,8 +11,16 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    //declare variables
+    TextView display;
+    Button addEpic;
+    private String ending = "!";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +37,18 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //greeting
+        Toast.makeText(getApplicationContext(),"Welcome to Epic Game", Toast.LENGTH_SHORT).show();
+
+        display = findViewById(R.id.textBox);
+        display.setText(getString(R.string.epic_game, ending));
+
+        addEpic = findViewById(R.id.button);
+    }
+    public void moreEpic(View v){
+        ending = ending + "!";
+        display.setText(getString(R.string.epic_game, ending));
     }
 
     @Override
