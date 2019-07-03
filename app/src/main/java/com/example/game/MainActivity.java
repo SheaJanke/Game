@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView display;
     Button addEpic;
     private String ending = "!";
+    private int kms = 0;
 
 
     @Override
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         addEpic = findViewById(R.id.button);
     }
     public void moreEpic(View v){
+        kms += 10;
         ending = ending + "!";
+
         display.setText(getString(R.string.epic_game, ending));
     }
 
